@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Product Details - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+                <li><a href="checkout.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="product-details-wrapper">
+        <div class="product-details-container">
+            <div class="product-image">
+                <img src="Game-Wii-SuperSmash-2__76479.jpg" alt="Super Smash Bros. Brawl - Wii Game">
+            </div>
+            <div class="product-info">
+                <h1>Super Smash Bros. Brawl - Wii Game</h1>
+                <p class="product-price">Price: $22.99</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="updatePrice()">
+                <p>Total Price: <span id="totalPrice">$22.99</span></p>
+                <button class="checkout-btn" onclick="redirectToCheckout()">Checkout</button>
+                <div class="product-description">
+                    <h3>Product Details</h3>
+                    <p>
+                     
+Super Smash Bros. Brawl - Wii Game - Nintendo Wii Game
+
+Super Smash Bros Brawl was a gamers’ dream come true. With a jaw-dropping number of 39 fighters. This was the biggest Smash Brothers game to date! In more ways than one. In addition to the enormous roster, there were bigger stages, 258 tracks of music, an epic adventure mode, tons of new weapons, and devastating Final Smash Attacks that would obliterate all competition. But more importantly, SONIC THE HEDGEHOG was is Smash Bros! After more than a decade, you could finally have Sonic and Mario, the mascots of Sega and Nintendo, throw down to settle the greatest rivalry in gaming history. Add onto that the return of addictive trophy collecting, the ability to create your own stages, and wi-fi supported battles that let you challenge players from across the globe, and a treasure trove of other hidden goodies made Brawl the ultimate four-player fighting game.
+
+Includes Nintendo Wii original game disc and may come with the original instruction manual and cover art when available. All Nintendo Wii games are made for and play on the Wii system. All DK's games are in good used condition, cleaned, tested, guaranteed to work, and backed by our 1 year warranty.
+
+
+                    </p>
+                </div>
+                <div class="review-container">
+                    <div class="review-header">
+                        <h2>Product Reviews</h2>
+                    </div>
+                    <div class="review">
+                        <div class="reviewer-info">
+                            <h3>Verified Buyer </h3>
+                            <p>Rating: ★★★★☆</p> <!-- Four out of five stars -->
+                        </div>
+                        <div class="review-content">
+                            <h4>Love it!!</h4>
+                            <p>Nostalgic and still one of my favorites, plays perfectly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+
+    <script>
+        const basePrice =  22.99 ;
+        function updatePrice() {
+            const quantity = document.getElementById('quantity').value;
+            document.getElementById('totalPrice').textContent = `$${(basePrice * quantity).toFixed(2)}`;
+        }
+
+        function redirectToCheckout() {
+            const quantity = document.getElementById('quantity').value;
+            const productName = encodeURIComponent(document.querySelector('.product-info h1').textContent);
+            const totalPrice = (basePrice * quantity).toFixed(2);
+            window.location.href = `checkout.html?name=${productName}&price=${totalPrice}`;
+        }
+    </script>
+</body>
+</html>

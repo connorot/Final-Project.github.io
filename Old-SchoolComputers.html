@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Products - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <div><header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header></div>
+    <h1>Our Products</h1>
+    <div class="category-dropdown">
+        <label for="product-category">Choose a category:</label>
+        <select id="product-category">
+            <option value="Vintage-Games&Software.html">Vintage Games & Software</option>
+            <option value="products.html">Retro Gaming Consoles</option>
+            <option value="Old-SchoolComputers.html">Old-School Computers</option>
+        </select>
+    </div>    
+    <div class="products-grid">
+        <!-- Add more product cards as needed -->
+        <div class="product-card" onclick="window.location.href='ENIAC MarkMidnighEdition.html';">
+            <img src="eniac-current.JPG" alt="ENIAC Mark Midnight Edition">
+            <h3>ENIAC Mark "Midnight" Edition</h3>
+            <p>$6,900,000</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='Apple II.html';">
+            <img src="s-l1600.png" alt="Vintage Apple II Plus Computer w/ Silentype Printer, Disk Drive, Manuals, & Box">
+            <h3>Vintage Apple II Plus Computer w/ Silentype Printer, Disk Drive, Manuals, & Box</h3>
+            <p>$1,199.98</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='Commodore 64.html';">
+            <img src="s-l1600.jpg" alt="Commodore 64 Computer System Bundle">
+            <h3>Commodore 64 Computer System Bundle</h3>
+            <p>$355.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='Apple Macintosh.html';">
+            <img src="Apple Macintosh.jpg" alt="APPLE Macintosh M0001 128k Computer with original keyboard & mouse">
+            <h3>APPLE Macintosh M0001 128k Computer with original keyboard & mouse</h3>
+            <p>$1,199</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='IBM PC Model 5150.html';">
+            <img src="IBM PC Model 5150.jpg" alt="IBM PC Computer Model 5150 Working Video Card 512K Ram 5151 Monitor Keyboard.">
+            <h3>IBM PC Computer Model 5150 Working Video Card 512K Ram 5151 Monitor Keyboard.</h3>
+            <p>$699.00</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='Apple PowerBook.html';">
+            <img src="Apple PowerBook.png" alt="Apple Macintosh PowerBook 170 JLPGA 8MB RAM 800MB HD System 7.5.5 RARE EXCLUSIVE">
+            <h3>Apple Macintosh PowerBook 170 JLPGA 8MB RAM 800MB HD System 7.5.5 RARE EXCLUSIVE</h3>
+            <p>$10,000</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var productCategoryDropdown = document.getElementById('product-category');
+            var currentUrl = window.location.href;
+
+            if (currentUrl.includes('Vintage-Games&Software.html')) {
+                productCategoryDropdown.value = 'Vintage-Games&Software.html';
+            } else if (currentUrl.includes('Old-SchoolComputers.html')) {
+                productCategoryDropdown.value = 'Old-SchoolComputers.html';
+            } else if (currentUrl.includes('products.html')) {
+                productCategoryDropdown.value = 'products.html';
+            }
+
+            productCategoryDropdown.addEventListener('change', function() {
+                window.location.href = this.value;
+            });
+        });
+    </script>
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+</body>
+</html>

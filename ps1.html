@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Product Details - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+                <li><a href="checkout.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="product-details-wrapper">
+        <div class="product-details-container">
+            <div class="product-image">
+                <img src="PS1_pak_3__94062.jpg" alt="PlayStation 1 PS1 Player Pak">
+            </div>
+            <div class="product-info">
+                <h1>PlayStation 1 PS1 Player Pak</h1>
+                <p class="product-price">Price: $99.99</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="updatePrice()">
+                <p>Total Price: <span id="totalPrice">$99.99</span></p>
+                <button class="checkout-btn" onclick="redirectToCheckout()">Checkout</button>
+                <div class="product-description">
+                    <h3>Product Details</h3>
+                    <p>
+                        
+PlayStation 1 Player Pak
+The original PlayStation 1 system pak includes the console, power cord, TV hookup, and 1 compatible controller. Controller style may vary.  This item is in good used condition and has been cleaned, tested, works and is backed by our free 1 year warranty.
+The PS1 started a revolution in gaming taking games to the next generation.
+
+A cosmetically flawed system includes product showing greater signs of use and more surface flaws including but not limited to discoloration, scratches, chips, stickers, writing etc.
+ that will transport you back to the golden age of gaming while still providing modern features. This refurbished gem is the ultimate addition to any gamer's collection, offering a seamless blend of nostalgia and cutting-edge technology.
+                    </p>
+                </div>
+                <div class="review-container">
+                    <div class="review-header">
+                        <h2>Product Reviews</h2>
+                    </div>
+                    <div class="review">
+                        <div class="reviewer-info">
+                            <h3>Jonny</h3>
+                            <p>Rating: ★★★★☆</p> <!-- Four out of five stars -->
+                        </div>
+                        <div class="review-content">
+                            <h4>AMAZING!!!</h4>
+                            <p>This PS1 i ordered was outstanding. i opened up the package and found everything in good condition. I even ordered an acceptable console and it barely has any damage! Would recommend 10000% </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+
+    <script>
+        const basePrice = 99.99;
+        function updatePrice() {
+            const quantity = document.getElementById('quantity').value;
+            document.getElementById('totalPrice').textContent = `$${(basePrice * quantity).toFixed(2)}`;
+        }
+
+        function redirectToCheckout() {
+            const quantity = document.getElementById('quantity').value;
+            const productName = encodeURIComponent(document.querySelector('.product-info h1').textContent);
+            const totalPrice = (basePrice * quantity).toFixed(2);
+            window.location.href = `checkout.html?name=${productName}&price=${totalPrice}`;
+        }
+    </script>
+</body>
+</html>

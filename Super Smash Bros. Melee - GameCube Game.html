@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Product Details - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+                <li><a href="checkout.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="product-details-wrapper">
+        <div class="product-details-container">
+            <div class="product-image">
+                <img src="Complete Gamecube-57-2__90156.jpg" alt="Super Smash Bros. Melee - GameCube Game">
+            </div>
+            <div class="product-info">
+                <h1>Super Smash Bros. Melee - GameCube Game</h1>
+                <p class="product-price">Price: $78.99</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="updatePrice()">
+                <p>Total Price: <span id="totalPrice"> $78.99</span></p>
+                <button class="checkout-btn" onclick="redirectToCheckout()">Checkout</button>
+                <div class="product-description">
+                    <h3>Product Details</h3>
+                    <p>
+                    
+Super Smash Bros. Melee - GameCube Game
+
+Super Smash Bros. Melee wasnt just the game that made the Nintendo Gamecube a must-own system; it’s the game that defined a generation! If you were playing video games in 2001, you played Melee. And, you loved it. With an insane roster of 25 Nintendo All-Stars, dozens of comically punishing weapons, and unparalllelled four-player action, Melee took everything that made the original Super Smash Brothers for the N64 great and turned it up to 11. Bigger stages, awesome music, an entire Adventure mode where video game worlds collided, Melee was the ultimate gaming remix. Lead Link through the Mushroom Kingdom! Guide Mario down the dungeons of Hyrule! Take Pikachu for a run across the racetracks of F-Zero! Melee wasn’t just a Nintendo duel for the ages, it was a massive remix of all your favorite games, blended into a glorious collaboration, and garnished with a credits sequence that let you shoot every name that scrolled by, like you were playing Starfox. There was never a dull moment in Melee, and it more than earns its title as the greatest fighting game sequel ever made! It’s a party game, that doubles as a dizzyingly complex fighting game. Melee’s controls are simple enough that anyone can pickup and play it, but it can take years to master the abilities of any member of its roster. There’s a reason why Super Smash Bros. Melee is still played at competitive gaming tournaments around the world: it is a timeless classic. Even today, it still feels as exciting and fresh as it did over a decade ago. It’s a perennial crowd-pleaser, and one of the single most enjoyable titles Nintendo has ever produced. If ever there was a game we could recommend to anyone, it’s Super Smash Bros. Melee. It’s literally got something for everyone, and it’s all here waiting for you to experienceover again.
+
+Nintendo GameCube game in good used condition. All Nintendo GameCube games will play on both the GameCube and compatible Wii system consoles. Like all our games, thias item has been cleaned, tested, guaranteed to work, and backed by our free 1 year warranty.
+Includes original game disc only. Complete option contains original game disc with manual in an original Nintendo GameCube case with cover art.
+
+
+                </p>
+                </div>
+                <div class="review-container">
+                    <div class="review-header">
+                        <h2>Product Reviews</h2>
+                    </div>
+                    <div class="review">
+                        <div class="reviewer-info">
+                            <h3>Verified Buyer </h3>
+                            <p>Rating: ★★★★☆</p> <!-- Four out of five stars -->
+                        </div>
+                        <div class="review-content">
+                            <h4>EXCELLENT SELLER!!!</h4>
+                            <p> Irreplaceable classic that improves on its predecessor in virtually every way
+                                Review by Donald on 24 Feb 2024 review stating Irreplaceable classic that improves on its predecessor in virtually every way The visuals are stunning and smooth. The soundtrack engages you with a plethora of different tracks from Nintendo's all star cast of games. There is a lot of content and many characters to unlock and master. There is a lot of fun to be had here competitive or otherwise. Even playing single player is a blast.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+
+    <script>
+        const basePrice =  78.99 ;
+        function updatePrice() {
+            const quantity = document.getElementById('quantity').value;
+            document.getElementById('totalPrice').textContent = `$${(basePrice * quantity).toFixed(2)}`;
+        }
+
+        function redirectToCheckout() {
+            const quantity = document.getElementById('quantity').value;
+            const productName = encodeURIComponent(document.querySelector('.product-info h1').textContent);
+            const totalPrice = (basePrice * quantity).toFixed(2);
+            window.location.href = `checkout.html?name=${productName}&price=${totalPrice}`;
+        }
+    </script>
+</body>
+</html>

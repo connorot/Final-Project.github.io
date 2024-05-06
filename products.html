@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Products - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <div><header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header></div>
+    <h1>Our Products</h1>
+    <div class="category-dropdown">
+        <label for="product-category">Choose a category:</label>
+        <select id="product-category">
+            <option value="Vintage-Games&Software.html">Vintage Games & Software</option>
+            <option value="products.html">Retro Gaming Consoles</option>
+            <option value="Old-SchoolComputers.html">Old-School Computers</option>
+        </select>
+    </div>
+    
+    <div class="products-grid">
+        <!-- Add more product cards as needed -->
+        <div class="product-card" onclick="window.location.href='wii.html';">
+            <img src="wii.webp" alt="wii">
+            <h3>Wii</h3>
+            <p>$132.49</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='GameCube.html';">
+            <img src="Gamecube-Pak-PlayerPakPlat-3rd__62641.jpg" alt="Nintendo GameCube">
+            <h3>Nintendo GameCube</h3>
+            <p>$159.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='ps1.html';">
+            <img src="PS1_pak_3__94062.jpg" alt="ps1">
+            <h3>PlayStation 1 PS1 Player Pak</h3>
+            <p>$99.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='ps2.html';">
+            <img src="PS2-Pak-Slim-3rd__88954.jpg" alt="PlayStation 2 Slim Black PS2 Player Pak">
+            <h3>PlayStation 2 Slim Black PS2 Player Pak</h3>
+            <p>$199.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='Xbox.html';">
+            <img src="xboxpak------------1__33315.jpg" alt="Xbox System Player Pak">
+            <h3>Xbox System Player Pak</h3>
+            <p>$209.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="window.location.href='xbox360.html';">
+            <img src="whitestd--------------1__63969.jpg" alt="xbox360">
+            <h3>Xbox 360 Standard 20GB Player Pak White</h3>
+            <p>$129.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var productCategoryDropdown = document.getElementById('product-category');
+            var currentUrl = window.location.href;
+
+            if (currentUrl.includes('Vintage-Games&Software.html')) {
+                productCategoryDropdown.value = 'Vintage-Games&Software.html';
+            } else if (currentUrl.includes('Old-SchoolComputers.html')) {
+                productCategoryDropdown.value = 'Old-SchoolComputers.html';
+            } else if (currentUrl.includes('products.html')) {
+                productCategoryDropdown.value = 'products.html';
+            }
+
+            productCategoryDropdown.addEventListener('change', function() {
+                window.location.href = this.value;
+            });
+        });
+    </script>
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+</body>
+</html>

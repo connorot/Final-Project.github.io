@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Products - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <div><header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header></div>
+    <h1>Our Products</h1>
+    <div class="category-dropdown">
+        <div class="category-dropdown">
+            <label for="product-category">Choose a category:</label>
+            <select id="product-category">
+                <option value="Vintage-Games&Software.html">Vintage Games & Software</option>
+                <option value="products.html">Retro Gaming Consoles</option>
+                <option value="Old-SchoolComputers.html">Old-School Computers</option>
+            </select>
+        </div>        
+        <div class="products-grid">
+            <!-- Add more product cards as needed -->
+            <div class="product-card" onclick="window.location.href='Super Smash Bros. Melee - GameCube Game.html';">
+                <img src="Complete Gamecube-57-2__90156.jpg" alt="Super Smash Bros. Melee - GameCube Game">
+                <h3>Super Smash Bros. Melee - GameCube Game</h3>
+                <p> $78.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="window.location.href='Super Smash Bros. Brawl - Wii Game.html';">
+                <img src="Game-Wii-SuperSmash-2__76479.jpg" alt="Super Smash Bros. Brawl - Wii Game">
+                <h3>Super Smash Bros. Brawl - Wii Game</h3>
+                <p>$22.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="window.location.href='Final Fantasy VII in 2024.html';">
+                <img src="Game PS1-191-2__21980.jpg" alt="Final Fantasy VII">
+                <h3>Final Fantasy VII for PS1</h3>
+                <p> $37.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="window.location.href='Grand Theft Auto San Andreas - PS2 Game.html';">
+                <img src="GTA_san_andreas_ps2__36904.jpg" alt="Grand Theft Auto San Andreas - PS2 Game">
+                <h3>Grand Theft Auto San Andreas - PS2 Game</h3>
+                <p>$14.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="window.location.href='Starwars battlefront 2 for Xbox 1.html';">
+                <img src="Game-Xbox-starwars-2__93055.jpg" alt="Starwars battlefront 2 for Xbox 1">
+                <h3>Starwars battlefront 2 for Xbox 1</h3>
+                <p>$18.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card" onclick="window.location.href='Halo 3 - Xbox 360 Game.html';">
+                <img src="XBOX_360_Halo_3-2__83467.jpg" alt="Halo 3 - Xbox 360 Game">
+                <h3>Halo 3 - Xbox 360 Game</h3>
+                <p>$8.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var productCategoryDropdown = document.getElementById('product-category');
+            var currentUrl = window.location.href;
+
+            if (currentUrl.includes('Vintage-Games&Software.html')) {
+                productCategoryDropdown.value = 'Vintage-Games&Software.html';
+            } else if (currentUrl.includes('Old-SchoolComputers.html')) {
+                productCategoryDropdown.value = 'Old-SchoolComputers.html';
+            } else if (currentUrl.includes('products.html')) {
+                productCategoryDropdown.value = 'products.html';
+            }
+            productCategoryDropdown.addEventListener('change', function() {
+                window.location.href = this.value;
+            });
+        });
+    </script>
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+</body>
+</html>

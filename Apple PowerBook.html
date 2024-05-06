@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Product Details - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+                <li><a href="checkout.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="product-details-wrapper">
+        <div class="product-details-container">
+            <div class="product-image">
+                <img src="Apple PowerBook.png" alt="Apple Macintosh PowerBook 170 JLPGA 8MB RAM 800MB HD System 7.5.5 RARE EXCLUSIVE">
+            </div>
+            <div class="product-info">
+                <h1>Apple Macintosh PowerBook 170 JLPGA 8MB RAM 800MB HD System 7.5.5 RARE EXCLUSIVE</h1>
+                <p class="product-price">Price: $10,000</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="updatePrice()">
+                <p>Total Price: <span id="totalPrice">$10,000</span></p>
+                <button class="checkout-btn" onclick="redirectToCheckout()">Checkout</button>
+                <div class="product-description">
+                    <h3>Product Details</h3>
+                    <p>
+                        For your consideration at this is a vintage mint condition colorful blue and white Apple Macintosh PowerBook 170 collectible laptop computer notebook system, with 68030 class processor clocked at 25Mhz. It works great. This is a limited edition product. Only 500 of these units were produced and put into mass production in the early to mid 1990s. When the system is plugged in and turned on, it starts up. System 7.5.5 was just installed on the internal spacious upgraded 800 megabyte (800MB) SCSI hard drive. Palm-rest, keyboard, and trackball mechanism are complete with a rare yellow colored trackball, and matching colorful plastics for this rare JLPGA limited edition blue PowerBook 170. 9.8" monochrome LCD display shows full to moderate brightness for its age of 30 years. There is no tunnel vision or darkening of display corners observed for this display. 8MB of RAM (total) installed, with an 800MB hard drive upgraded on this PowerBook 170 - these are the maximum specifications for the installation on this machine.
+
+                        Ships with a standard PowerBook AC adapter with North American power connector and a matchinh JLPGA PowerBook 170 Battery (included for aesthetics of the red colorful red door, but the battery is depleted and not charging any longer, it will be shipped separately inside the same package). Internal Global Village 14.4k fax data modem is installed. Included with the PowerBook 170 is a black serial printer cable, Apple dark gray microphone and audio line-out adapter, Localtalk connections, and a variety of SCSI cables are included for external drive media. I am also including a black Apple Desktop Bus Mouse II as well. The internal Apple SuperDrive 1.4MB floppy disk drive is working and functional. This limited edition unit is offered as-is, with no warranty, and any changes or additional modifications are not supported, as such actions are performed at your own risk. Less than 500 units of this JLPGA machine were produced, and this is currently the only unit that is being offered for sale with a maxed out memory and hard disk drive storage space configuration. The right side foot has a piece of brittle rubber that is separated due to age, and I have glued this piece back with resin glue - should not impact the functional performance of the machine.
+                       
+                       Ports and connectors on the back of the machine include the following: power adapter, serial modem, serial printer, SCSI HDI-30, audio line-in and audio line-out, Apple Desktop Bus (ADB) port for keyboards and mice. The keyboard is the original keyboard configuration from Japan included with the machine).
+                       
+                       International shipping and delivery is available for this product, buyer is responsible for sourcing the correct power adapter for their local region if the North American USA/Canada/Japan power adapter included is unsupported for use in other countries. The PowerBook 170 and all the included accessories will be securely packaged in bubblewrap and the unit double-boxed inside sturdy cardboard boxes.
+                    </p>
+                </div>
+                <div class="review-container">
+                    <div class="review-header">
+                        <h2>Product Reviews</h2>
+                    </div>
+                    <div class="review">
+                        <div class="reviewer-info">
+                            <h3>Verified Buyer </h3>
+                            <p>Rating: ★★★★☆</p> <!-- Four out of five stars -->
+                        </div>
+                        <div class="review-content">
+                            <h4>EXCELLENT SELLER!!!</h4>
+                            <p>Best seller ever!!! The monitor came beautifully and carefully packaged!!! And is in grrrrrreat shape better than described!!! A seller that truly care for his customers and the shipping was super fast!!!! Thank you so very much!!! Definitely buying from him again soon!!!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+
+    <script>
+        const basePrice = 10000;
+        function updatePrice() {
+            const quantity = document.getElementById('quantity').value;
+            document.getElementById('totalPrice').textContent = `$${(basePrice * quantity).toFixed(2)}`;
+        }
+
+        function redirectToCheckout() {
+            const quantity = document.getElementById('quantity').value;
+            const productName = encodeURIComponent(document.querySelector('.product-info h1').textContent);
+            const totalPrice = (basePrice * quantity).toFixed(2);
+            window.location.href = `checkout.html?name=${productName}&price=${totalPrice}`;
+        }
+    </script>
+</body>
+</html>

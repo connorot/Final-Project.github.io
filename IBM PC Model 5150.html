@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Product Details - Connor's Retro Hardware Depot</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Connor's Retro Hardware Depot</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Feedback Survey.html">Contact</a></li>
+                <li><a href="checkout.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="product-details-wrapper">
+        <div class="product-details-container">
+            <div class="product-image">
+                <img src="IBM PC Model 5150.jpg" alt="IBM PC Computer Model 5150 Working Video Card 512K Ram 5151 Monitor Keyboard.">
+            </div>
+            <div class="product-info">
+                <h1>IBM PC Computer Model 5150 Working Video Card 512K Ram 5151 Monitor Keyboard.</h1>
+                <p class="product-price">Price: $699.00</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="updatePrice()">
+                <p>Total Price: <span id="totalPrice">$699.00</span></p>
+                <button class="checkout-btn" onclick="redirectToCheckout()">Checkout</button>
+                <div class="product-description">
+                    <h3>Product Details</h3>
+                    <p>
+                        IBM PC Computer Model 5150 Working Parallel Video Card 512K Ram 5151 Monitor Keyboard.  I did not have a floppy disk to test the drives but the computer and monitor powered up fine.  The keyboard is missing the space bar but the whole system is in overall decent condition.  Please use pictures to determine condition and please ask any questions before bidding.  Sold in as is condition.  Thanks for looking and please check my other auctions for other great stuff.
+                    </p>
+                </div>
+                <div class="review-container">
+                    <div class="review-header">
+                        <h2>Product Reviews</h2>
+                    </div>
+                    <div class="review">
+                        <div class="reviewer-info">
+                            <h3>Verified Buyer </h3>
+                            <p>Rating: ★★★★☆</p> <!-- Four out of five stars -->
+                        </div>
+                        <div class="review-content">
+                            <h4>EXCELLENT SELLER!!!</h4>
+                            <p>Photos and description of the item were great! Super fast shipping and the item was packaged wonderfully in a box with bubble wrap, arriving in excellent condition! Great job - thanks!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Connor's Retro Hardware Depot</p>
+    </footer>
+
+    <script>
+        const basePrice = 699.00;
+        function updatePrice() {
+            const quantity = document.getElementById('quantity').value;
+            document.getElementById('totalPrice').textContent = `$${(basePrice * quantity).toFixed(2)}`;
+        }
+
+        function redirectToCheckout() {
+            const quantity = document.getElementById('quantity').value;
+            const productName = encodeURIComponent(document.querySelector('.product-info h1').textContent);
+            const totalPrice = (basePrice * quantity).toFixed(2);
+            window.location.href = `checkout.html?name=${productName}&price=${totalPrice}`;
+        }
+    </script>
+</body>
+</html>
